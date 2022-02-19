@@ -1,7 +1,8 @@
 :root {
-    --white-color: #fff;
-    --black-color: #000;
+    /* --white-color: #fff;
+    --black-color: #000; */
     --text-color: #333;
+    --primary-color: rgb(26, 148, 255);
 }
 
 * {
@@ -15,7 +16,7 @@ html {
     box-sizing: border-box;
 }
 
-.container__fluid {
+.container-fluid {
     width: 1200px;
     max-width: 100%;
     margin: 0 auto;
@@ -23,6 +24,10 @@ html {
 
 .container {
     width: 100%;
+}
+
+.dflex {
+    display: flex;
 }
 
 .dflex--wrap {
