@@ -3,6 +3,7 @@
     --black-color: #000; */
     --text-color: #333;
     --primary-color: rgb(26, 148, 255);
+    --light-blue: #f2faff;
 }
 
 * {
@@ -33,4 +34,15 @@ html {
 .dflex--wrap {
     display: flex;
     flex-wrap: wrap;
+}
+
+/* ------------------ ANIMATION ---------------- */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

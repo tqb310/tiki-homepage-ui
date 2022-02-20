@@ -29,6 +29,7 @@ body {
     list-style: none;
     font-size: 1.3rem;
     font-weight: 400;    
+    position: relative;
 }
 
 .header__navbar-item--strong {
@@ -39,8 +40,8 @@ body {
 }
 .header__navbar-item--separate::after {
     content: '';
-    width: 1.5px;
-    height: 12px;
+    width: 0.2rem;
+    height: 1.2rem;
     background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
     right: -3px;
@@ -48,17 +49,107 @@ body {
     transform: translateY(-50%);
 }
 
-.header__navbar-link {
+.header__navbar-link,
+.header__navbar-icon {
     text-decoration: none;  
-    color: white;
-    padding: 4px 8px; 
+    color: white;    
 }
 
-.header__navbar-link:hover {
+.header__navbar-link:hover,
+.header__navbar-icon:hover {
     color: rgba(255, 255, 255, 0.7)
+}
+
+.header__navbar-link {
+    padding: 0.4rem 0.8rem;
+}
+
+.header__navbar-title {
+    padding-left: 0.8rem;
+}
+.header__navbar-icon  {
+    margin: 0 0.6rem;
 }
 
 .header__navbar-link--no-hover:hover {
     color: white;
 }
 
+/* QR code */
+.header__qr-tooltip {
+    display: none;
+    position: absolute;     
+    padding-top: 1.2rem;
+    top: 100%;
+    width: 200px;    
+    animation: fadeIn ease-in .3s;
+}
+
+.header__apps {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 12px;    
+}
+
+.header__apps a img {
+    height: 18px;
+}
+
+.header__navbar-item--has-qr:hover .header__qr-tooltip{
+    display: block;
+}
+
+/* Notify */
+
+.header__notify {
+    position: absolute;
+    top: 130%;
+    right: 0;    
+    color: var(--text-color);
+    border-radius: 2px;
+    width: 404px;    
+}
+
+.header__notify h4 {
+    margin: 0;
+    padding: 1rem 1.5rem;
+    background-color: #fafafa;
+    color: #999;
+    font-weight: 500;
+}
+
+.header__notify-list {
+    padding-left: 0;
+}
+
+.header__notify-item {    
+    list-style: none;
+    background-color: var(--light-blue);
+    /* height: 100px; */
+}
+
+.header__notify-link {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem 1.5rem;
+    width: 100%;
+}
+
+.header__notify-item-thumbnail {
+    float: left;
+    width: 60px;
+    margin-right: 10px;    
+}
+
+.header__notify-item-title {
+    font-weight: 500;
+    margin: 0rem;
+}
+
+.header__notify-item-detail {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: .7rem;
+}

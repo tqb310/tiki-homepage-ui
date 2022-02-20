@@ -17,6 +17,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/fontawesome-free-6.0.0-web/css/all.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
@@ -31,27 +35,96 @@
               </li>
               <li class="header__navbar-item header__navbar-item--separate">
                 <a href="#" class="header__navbar-link">
-                  Trở thành Người bán Shopee
+                  Trở thành Người bán Tiki
                 </a>
               </li>
-              <li class="header__navbar-item header__navbar-item--separate">
+              <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
                 <a href="#" class="header__navbar-link">Tải ứng dụng</a>
+                <!-- QR code -->
+                <div class="header__qr-tooltip">
+                  <img
+                    src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/d91264e165ed6facc6178994d5afae79.png"
+                    alt="QR code"
+                    width=""
+                  />
+                  <div class="header__apps">
+                    <a href="#"
+                      ><img
+                        src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/39f189e19764dab688d3850742f13718.png"
+                        alt="App store"
+                    /></a>
+                    <a href="#">
+                      <img
+                        src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/f4f5426ce757aea491dce94201560583.png"
+                        alt="CH play"
+                      />
+                    </a>
+                  </div>
+                </div>
               </li>
               <li class="header__navbar-item">
-                <a class="header__navbar-link header__navbar-link--no-hover"
-                  >Kết nối</a
-                >
+                <div>
+                  <span class="header__navbar-title">Kết nối</span>
+                  <a
+                    href="https://facebook.com"
+                    class="header__navbar-icon"
+                    target="blank"
+                    ><i class="fa-brands fa-facebook fa-lg"></i
+                  ></a>
+                  <a
+                    href="https://instagram.com"
+                    class="header__navbar-icon"
+                    target="blank"
+                  >
+                    <i class="fa-brands fa-instagram fa-lg"></i>
+                  </a>
+                </div>
               </li>
             </ul>
             <ul class="header__navbar-list">
-              <li class="header__navbar-item header__navbar-item--separate">
-                <a href="#" class="header__navbar-link">Thông báo</a>
+              <li class="header__navbar-item">
+                <a class="header__navbar-link">
+                  <i class="fa-regular fa-bell"></i>
+                  Thông báo
+                </a>
+                <div class="header__notify">
+                  <h4>Thông báo mới nhận</h4>
+                  <ul class="header__notify-list">
+                    <li class="header__notify-item">
+                      <a class="header__notify-link" href="#">
+                        <img class="header__notify-item-thumbnail" src="https://cf.shopee.vn/file/cd1a388f0ef7b62cc2fd6796233a3b43_tn" alt="item">
+                        <p class="header__notify-item-title">Giày sục MLB đế khâu - nam nữ dễ phối đồ - fullbox</p>
+                        <p class="header__notify-item-detail">Siêu sale duy nhất ngày 20/02/2022</p>
+                      </a>
+                    </li>                    
+                    <li class="header__notify-item">
+                      <a class="header__notify-link" href="#">
+                        <img class="header__notify-item-thumbnail" src="https://cf.shopee.vn/file/cd1a388f0ef7b62cc2fd6796233a3b43_tn" alt="item">
+                        <p class="header__notify-item-title">Giày sục MLB đế khâu - nam nữ dễ phối đồ - fullbox</p>
+                        <p class="header__notify-item-detail">Siêu sale duy nhất ngày 20/02/2022</p>
+                      </a>
+                    </li>                    
+                    <li class="header__notify-item">
+                      <a class="header__notify-link" href="#">
+                        <img class="header__notify-item-thumbnail" src="https://cf.shopee.vn/file/cd1a388f0ef7b62cc2fd6796233a3b43_tn" alt="item">
+                        <p class="header__notify-item-title">Giày sục MLB đế khâu - nam nữ dễ phối đồ - fullbox</p>
+                        <p class="header__notify-item-detail">Siêu sale duy nhất ngày 20/02/2022</p>
+                      </a>
+                    </li>                    
+                  </ul>
+                </div>
               </li>
-              <li class="header__navbar-item header__navbar-item--separate">
-                <a href="#" class="header__navbar-link">Hỗ trợ</a>
+              <li class="header__navbar-item">
+                <a href="#" class="header__navbar-link">
+                  <i class="fa-regular fa-circle-question"></i>
+                  Hỗ trợ
+                </a>
               </li>
-              <li class="header__navbar-item header__navbar-item--separate">
-                <a class="header__navbar-link header__navbar-link--no-hover">Tiếng Việt</a>
+              <li class="header__navbar-item">
+                <a class="header__navbar-link header__navbar-link--no-hover">
+                  <i class="fa-regular fa-earth-africa"></i>
+                  Tiếng Việt
+                  </a>
               </li>
               <li
                 class="header__navbar-item header__navbar-item--separate header__navbar-item--strong"
