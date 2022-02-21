@@ -59,7 +59,7 @@ body {
     color: rgba(255, 255, 255, 0.7)
 }
 
-.link {
+.header__navbar-list li > a{
     padding: 0.4rem 0.8rem;    
 }
 
@@ -308,14 +308,42 @@ body {
 }
 
 .main__navbar {
-
+    background-color: #fff;
 }
+
 .main__navbar-list {
     margin: 0;
-    padding: 0;
+    padding: 0 ;
     list-style: none;
+    display: flex;
+    justify-content: space-between;
 }
 
-.main_navbar-item {
+.main__navbar-item {
     display: inline-block;
+    font-size: 1.4rem;
+}
+
+.main__navbar-list li > a {
+    padding: 1.2rem .8rem;
+}
+
+.main__banner {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 ;
+}
+
+.main__slide-banner {
+    /* width: 824px; */
+}
+
+.main__slide-banner img {
+    width: 786px;
+    border-radius: 3px;
+}
+
+.main__aside-banner img {
+    border-radius: 3px;
+    width: 388px;
 }
