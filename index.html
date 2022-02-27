@@ -210,6 +210,74 @@
                 />
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
               </div>
+              <div class="header__search-autocomplete">
+                <div class="header__search-coupon">TikiNgon - Giảm đến 50%</div>
+                <div class="header__search-keywords">
+                  <ul class="header__search-keyword-list">
+                    <li class="header__search-keyword">
+                      <a href="#">tai nghe bluetooth</a>
+                    </li>
+                    <li class="header__search-keyword">
+                      <a href="#">iphone 13</a>
+                    </li>
+                    <li class="header__search-keyword">
+                      <a href="#">que thử covid tại nhà</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header__search-popular">
+                  <h4 class="header_search-popular-header">Tìm Kiếm Phổ Biến</h4>
+                  <ul class="header_search-popular-list">
+                    <li class="header_search-popular-item">
+                      <a href="#">nước giặt</a>
+                    </li>
+                    <li class="header_search-popular-item">
+                      <a href="#">nước giặt</a>
+                    </li>
+                    <li class="header_search-popular-item">
+                      <a href="#">nước giặt</a>
+                    </li>
+                    <li class="header_search-popular-item">
+                      <a href="#">nước giặt</a>
+                    </li>
+                    <li class="header_search-popular-item">
+                      <a href="#">nước giặt</a>
+                    </li>
+                    <li class="header_search-popular-item">
+                      <a href="#">nước giặt</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="header__hightlight-category">
+                  <h4>Danh Mục Nổi Bật</h4>
+                  <ul class="header__hightlight-category-list">
+                    <li class="header_hightlight-category-item">
+                      <a href="#">Thời trang nữ</a>
+                    </li>
+                    <li class="header_hightlight-category-item">
+                      <a href="#">Thời trang nữ</a>
+                    </li>
+                    <li class="header_hightlight-category-item">
+                      <a href="#">Thời trang nữ</a>
+                    </li>
+                    <li class="header_hightlight-category-item">
+                      <a href="#">Thời trang nữ</a>
+                    </li>
+                    <li class="header_hightlight-category-item">
+                      <a href="#">Thời trang nữ</a>
+                    </li>
+                    <li class="header_hightlight-category-item">
+                      <a href="#">Thời trang nữ</a>
+                    </li>
+                    <li class="header_hightlight-category-item">
+                      <a href="#">Thời trang nữ</a>
+                    </li>
+                    <li class="header_hightlight-category-item">
+                      <a href="#">Thời trang nữ</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>             
               <ul class="header__search-tags">
                 <li class="header__search-tag-item">
                   <a class="link link--white" href="#">trái cây</a>
@@ -246,6 +314,7 @@
           </div>
         </div>
       </header>
+      <div class="overlay-searchbar"></div>
       <main class="main">
         <div class="main__navbar">
           <div class="container-fluid">
@@ -307,19 +376,101 @@
         <div class="container-fluid">
           <div class="main__banner">
             <div class="main__slide-banner">
-              <img src="./assets/images/banner.png" alt="banner">
+              <img src="./assets/images/banner.png" alt="banner" />
             </div>
             <div class="main__aside-banner">
-              <img src="./assets/images/aside-banner.png" alt="aside banner">
+              <img src="./assets/images/aside-banner.png" alt="aside banner" />
             </div>
           </div>
           <div class="main__hot-sale">
             <div class="main__hot-sale-header">
-              <img src="./assets/images/giasoc.svg" alt="gia soc">
-              <img src="./assets/images/dealFlashIcon.svg" alt="flash">
-              <img src="./assets/images/homnay.svg" alt="hom nay">
+              <div>
+                <img src="./assets/images/giasoc.svg" alt="gia soc" />
+                <img src="./assets/images/dealFlashIcon.svg" alt="flash" />
+                <img src="./assets/images/homnay.svg" alt="hom nay" />
+              </div>
+              <div class="main__hot-sale-time">
+                <span>00</span> : <span>00</span> :
+                <span>39</span>
+                &#10095;
+              </div>
             </div>
-            <div class="main__hot-sale-body"></div>
+            <div class="main__hot-sale-body">
+              <div class="main__hot-sale-list">
+                <div class="main__hot-sale-item">
+                  <a href="#" class="main__hot-sale-link">
+                    <img src="./assets/images/phone.jpg" alt="iphone cu" />
+                    <div class="main__hot-sale-price">
+                      85.000 <span class="currency">đ</span>
+                      <span class="discount">-75%</span>
+                    </div>
+                    <div class="quantity-status quantity-status--sold-out">
+                      <span>Sắp bán hết</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="main__hot-sale-item">
+                  <a href="#" class="main__hot-sale-link">
+                    <img src="./assets/images/phone2.jpg" alt="iphone cu" />
+                    <div class="main__hot-sale-price">
+                      85.000 <span class="currency">đ</span>
+                      <span class="discount">-5%</span>
+                    </div>
+                    <div class="quantity-status quantity-status--just-open">
+                      <span>Vừa mở bán</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="main__hot-sale-item">
+                  <a href="#" class="main__hot-sale-link">
+                    <img src="./assets/images/phone3.jpg" alt="iphone cu" />
+                    <div class="main__hot-sale-price">
+                      85.000 <span class="currency">đ</span>
+                      <span class="discount">-5%</span>
+                    </div>
+                    <div class="quantity-status quantity-status--available">
+                      <span>Đã bán 77</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="main__hot-sale-item">
+                  <a href="#" class="main__hot-sale-link">
+                    <img src="./assets/images/fami.jpg" alt="iphone cu" />
+                    <div class="main__hot-sale-price">
+                      85.000 <span class="currency">đ</span>
+                      <span class="discount">-5%</span>
+                    </div>
+                    <div class="quantity-status quantity-status--sold-out">
+                      <span>Sắp bán hết</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="main__hot-sale-item">
+                  <a href="#" class="main__hot-sale-link">
+                    <img src="./assets/images/ps.jpg" alt="iphone cu" />
+                    <div class="main__hot-sale-price">
+                      85.000 <span class="currency">đ</span>
+                      <span class="discount">-5%</span>
+                    </div>
+                    <div class="quantity-status quantity-status--available">
+                      <span>Đã bán 77</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="main__hot-sale-item">
+                  <a href="#" class="main__hot-sale-link">
+                    <img src="./assets/images/watch.jpg" alt="iphone cu" />
+                    <div class="main__hot-sale-price">
+                      85.000 <span class="currency">đ</span>
+                      <span class="discount">-5%</span>
+                    </div>
+                    <div class="quantity-status quantity-status--available">
+                      <span>Đã bán 77</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
