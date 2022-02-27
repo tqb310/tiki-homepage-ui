@@ -148,8 +148,9 @@ ul {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    z-index: 1003;
     top: 0px;
+    display: none;
 }
 /* ------------------ ANIMATION ---------------- */
 
