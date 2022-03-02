@@ -6,6 +6,7 @@
   --background-color: #f5f5fa;
   /* BLUE */
   --light-blue: #f2faff;
+  --facebook-color: #3b5998;
 
   /* YELLOW */
   --dark-yellow: #fdd835;
@@ -68,6 +69,10 @@ ul {
 
 .link--white {
   color: white;
+}
+
+.link--primary {
+  color: var(--primary-color);
 }
 
 .link:hover {
@@ -142,16 +147,95 @@ ul {
   width: 12%;
 }
 
-/* OVERLAY WHEN FOCUSING ON SEARCHBAR  */
-.overlay-searchbar {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1003;
-    top: 0px;
-    display: none;
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* display: none; */
+  z-index: 1003;
+  display: flex;
+  align-items: center;
 }
+
+/* OVERLAY */
+.modal__overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;  
+  
+}
+
+/* OVERLAY WHEN FOCUSING ON SEARCHBAR */
+.modal--searchbar {
+  z-index: 1000;
+}
+
+.modal__body {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #555;
+  margin: auto;  
+  max-width: 1000px;   
+}
+
+/* BUTTON */
+.btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 2px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1.4rem;
+  padding: .75rem 2rem;
+  transition: all .2s; 
+}
+
+.btn:active {
+  transform: scale(.95,.95);
+}
+
+.btn + .btn {
+  margin-left: 2rem
+}
+
+.btn:hover {
+  opacity: .9 ;
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+  color: #fff
+}
+
+/* Icon button */
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon-btn.facebook {
+  background-color: var(--facebook-color);
+  color: white
+}
+
+.icon-btn.google {
+  background-color: #fcfcfc;
+}
+
+.icon-btn > img {
+  width: 24px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+
 /* ------------------ ANIMATION ---------------- */
 
 @keyframes fadeIn {
