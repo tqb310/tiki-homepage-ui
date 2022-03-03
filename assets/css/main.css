@@ -494,9 +494,6 @@
   justify-content: space-between;
 }
 
-.main__hot-sale-item {
-  /* width: 240px; */
-}
 .main__hot-sale-link {
   display: inline-block;
   text-decoration: none;
@@ -512,12 +509,13 @@
 
 /* FORM */
 .auth-form {
-  max-width: 500px;
+  max-width: 500px;  
+  display: none;
 }
 
 .auth-form__header {
   display: flex;
-  padding: 2rem 2.5rem;
+  padding: 2.5rem 3rem 2rem;
   justify-content: space-between;
 }
 
@@ -545,13 +543,19 @@
   padding: 0.8rem 1rem;
   box-sizing: border-box;
   outline: none;
+  border: 1px solid #ddd
+}
+
+.auth-form__form-control:focus {
+  border: 1px solid #888
 }
 
 .auth-form__aside {
   font-size: 1.4rem;
   margin-top: 3rem;
-  padding: 0 1rem;
+  /* padding: 0 .5rem; */
   text-align: center;
+  line-height: 2rem;
 }
 
 .auth-form__input-group {
@@ -564,7 +568,7 @@
 
 .auth-form__capcha {
   flex-basis: 100px;
-  border: 1px solid #efefef;
+  border: 1px solid #ddd;
   border-left: none;  
 }
 
@@ -575,7 +579,7 @@
 }
 
 .auth-form__capcha-submit {
-  border: 1px solid #888;
+  border: 1px solid #ddd;
   border-left: none;
   background-color: #fafafa;
   display: flex;

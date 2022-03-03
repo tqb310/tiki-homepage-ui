@@ -155,8 +155,7 @@ ul {
   left: 0;
   right: 0;
   /* display: none; */
-  z-index: 1003;
-  display: flex;
+  z-index: 1003; 
   align-items: center;
 }
 
@@ -169,9 +168,22 @@ ul {
   
 }
 
+.modal.open {
+  display: flex;
+}
+
 /* OVERLAY WHEN FOCUSING ON SEARCHBAR */
-.modal--searchbar {
-  z-index: 1000;
+.modal.modal--searchbar {
+  z-index: 1000;  
+}
+
+/* OVERLAY WHEN ENTERING SIGN UP & LOGIN FORM */
+.modal.modal--login-form #login {
+  display: block;
+}
+
+.modal.modal--register-form #register {
+  display: block;
 }
 
 .modal__body {
@@ -181,7 +193,8 @@ ul {
   border-radius: 5px;
   box-shadow: 0 0 5px #555;
   margin: auto;  
-  max-width: 1000px;   
+  max-width: 1000px;
+  overflow: hidden;
 }
 
 /* BUTTON */
@@ -216,8 +229,7 @@ ul {
 /* Icon button */
 .icon-btn {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center;  
 }
 
 .icon-btn.facebook {
@@ -230,9 +242,10 @@ ul {
 }
 
 .icon-btn > img {
-  width: 24px;
+  width: 16px;
   background-color: white;
   border-radius: 2px;
+  margin-right: 1.5rem;
 }
 
 
