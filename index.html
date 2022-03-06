@@ -47,7 +47,6 @@
                   <img
                     src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/d91264e165ed6facc6178994d5afae79.png"
                     alt="QR code"
-                    width=""
                   />
                   <div class="header__apps">
                     <a href="#"
@@ -179,14 +178,36 @@
                   Hỗ trợ
                 </a>
               </li>
-              <li
+              <li class="header__navbar-item header__navbar-item--has-user">
+                <div class="header__user-info">
+                  <i class="fa-solid fa-user"></i>
+                  <span class="header__navbar-username">Trương Quốc Bảo</span>
+                </div>
+                <div class="header__user-info-container">
+                  <ul class="header__user-info-list">
+                    <li class="header__user-info-item">
+                      <a class="link" href="#">Tài khoản của tôi</a>
+                    </li>
+                    <li class="header__user-info-item">
+                      <a class="link" href="#">Địa chỉ của tôi</a>
+                    </li>
+                    <li class="header__user-info-item">
+                      <a class="link" href="#">Đơn mua</a>
+                    </li>
+                    <li class="header__user-info-item">
+                      <a class="link" href="#">Đăng xuất</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- <li
                 class="header__navbar-item header__navbar-item--separate header__navbar-item--strong"
               >
                 <a href="#" class="link link--white">Đăng ký</a>
               </li>
               <li class="header__navbar-item header__navbar-item--strong">
                 <a href="#" class="link link--white">Đăng nhập</a>
-              </li>
+              </li> -->
             </ul>
           </nav>
           <div class="header__tools">
@@ -371,6 +392,74 @@
                   <span class="header__cart-badge">0</span>
                 </div>
                 <span>Giỏ Hàng</span>
+                <div class="header__cart-list">
+                  <div
+                    class="header__cart-list-inner header__cart-list-inner--no-cart"
+                  >
+                    <img src="./assets/images/no-cart.png" alt="no cart" />
+                    <p class="header__no-cart-title">Chưa có sản phẩm</p>
+                    <p class="header__cart-title">Sản phẩm đã thêm</p>
+                    <ul class="header__cart-list-of-items">
+                      <li class="header__cart-item">
+                        <a href="#">
+                          <img src="./assets/images/phone.jpg" alt="phone" />
+                          <div class="header__cart-item-description">
+                            <h4>Điện thoại iphone (99%)</h4>
+                            <p>Phân loại hàng: Bạc</p>
+                          </div>
+                          <div class="header__cart-item-control">
+                            <p>
+                              <span class="header__cart-item-price"
+                                >10.000.000</span
+                              >
+                              x <span>1</span>
+                            </p>
+                            <span class="header__cart-item-remove">Xóa</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="header__cart-item">
+                        <a href="#">
+                          <img src="./assets/images/phone.jpg" alt="phone" />
+                          <div class="header__cart-item-description">
+                            <h4>Điện thoại iphone (99%)</h4>
+                            <p>Phân loại hàng: Bạc</p>
+                          </div>
+                          <div class="header__cart-item-control">
+                            <p>
+                              <span class="header__cart-item-price"
+                                >10.000.000</span
+                              >
+                              x <span>1</span>
+                            </p>
+                            <span class="header__cart-item-remove">Xóa</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="header__cart-item">
+                        <a href="#">
+                          <img src="./assets/images/phone.jpg" alt="phone" />
+                          <div class="header__cart-item-description">
+                            <h4>Điện thoại iphone (99%)</h4>
+                            <p>Phân loại hàng: Bạc</p>
+                          </div>
+                          <div class="header__cart-item-control">
+                            <p>
+                              <span class="header__cart-item-price"
+                                >10.000.000</span
+                              >
+                              x <span>1</span>
+                            </p>
+                            <span class="header__cart-item-remove">Xóa</span>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="header__cart-more">
+                      <a href="#" class="btn btn--primary">Xem thêm</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -533,11 +622,85 @@
               </div>
             </div>
           </div>
+          <div class="main__products row">
+            <div class="main__category col col-2">
+              <div class="main__category-heading">
+                <i class="fa-solid fa-list-ul"></i>
+                <span class="main__category-heading-title">Danh mục</span>
+              </div>
+              <ul class="main__category-content">
+                <li class="main__category-item active">
+                  <a href="#">Thời trang nam</a>
+                </li>
+                <li class="main__category-item">
+                  <a href="#">Best seller</a>
+                </li>
+                <li class="main__category-item">
+                  <a href="#">Trang điểm mắt</a>
+                </li>
+                <li class="main__category-item">
+                  <a href="#">Điện thoại & phụ kiện</a>
+                </li>
+                <li class="main__category-item">
+                  <a href="#">Makeup collection</a>
+                </li>
+                <li class="main__category-item">
+                  <a href="#">Nhà cửa & đời sống</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col col-10">
+              <div class="main__product-filter">
+                <div class="main__product-filter-control">
+                  <span class="main__product-filter-title">Sắp xếp theo</span>
+                  <button class="btn btn--standard product-filter-btn">
+                    Phổ biến
+                  </button>
+                  <button class="btn btn--primary product-filter-btn">
+                    Mới nhất
+                  </button>
+                  <button class="btn btn--standard product-filter-btn">
+                    Bán chạy
+                  </button>
+                  <div class="main__product-filter-select">
+                    <span>Giá</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                    <div class="main__product-filter-select-wrap">
+                      <ul class="main__product-filter-select-list">
+                        <li class="main__product-filter-select-item">
+                          <a class="link link--hover-primary" href="#"
+                            >Giá: từ thấp đến cao</a
+                          >
+                        </li>
+                        <li class="main__product-filter-select-item">
+                          <a class="link link--hover-primary" href="#"
+                            >Giá: từ cao đến thấp</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="main__product-pagination">
+                  <span class="main__product-current-page">1</span>/<span
+                    class="main__product-total-pages"
+                    >14</span
+                  >
+                  <a href="#" class="btn btn--disabled pagination-pre">
+                    &#10094;
+                  </a>
+                  <a href="#" class="btn btn--standard pagination-next">
+                    &#10095;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <footer class="footer"></footer>
     </div>
-    <div class="modal">
+    <div class="modal modal--login-form">
       <div class="modal__overlay"></div>
       <div class="modal__body">
         <!-- SIGN UP FORM -->
@@ -562,7 +725,7 @@
                   placeholder="Nhập mã ngẫu nhiên/ mã hiển thị ở bên phải"
                 />
                 <div class="auth-form__capcha">
-                  <img src="./assets/images/capcha.png" alt="capcha" >
+                  <img src="./assets/images/capcha.png" alt="capcha" />
                 </div>
               </div>
             </div>
@@ -578,7 +741,7 @@
                 </div>
               </div>
             </div>
-            <div class="auth-form__aside">
+            <div class="auth-form__aside auth-form__register-aside">
               Bằng việc đăng kí, bạn đã đồng ý với Tiki về
               <a class="link link--primary">Điều khoản dịch vụ</a> &
               <a class="link link--primary">Chính sách bảo mật</a>
@@ -600,52 +763,35 @@
           </div>
         </div>
 
-         <!-- LOGIN FORM -->
-         <div id="login" class="auth-form">
+        <!-- LOGIN FORM -->
+        <div id="login" class="auth-form">
           <div class="auth-form__header">
-            <h3>Đăng ký</h3>
-            <span class="link link--primary">Đăng nhập</span>
+            <h3>Đăng nhập</h3>
+            <span class="link link--primary">Đăng ký</span>
           </div>
           <div class="auth-form__form">
             <div class="auth-form__form-group">
               <input
                 class="auth-form__form-control"
                 type="text"
-                placeholder="Số điện thoại"
+                placeholder="Email/Số điện thoại/Tên đăng nhập"
               />
             </div>
             <div class="auth-form__form-group">
-              <div class="auth-form__input-group">
-                <input
-                  class="auth-form__form-control"
-                  type="text"
-                  placeholder="Nhập mã ngẫu nhiên/ mã hiển thị ở bên phải"
-                />
-                <div class="auth-form__capcha">
-                  <img src="./assets/images/capcha.png" alt="capcha" >
-                </div>
-              </div>
+              <input
+                class="auth-form__form-control"
+                type="password"
+                placeholder="Mật khẩu"
+              />
             </div>
-            <div class="auth-form__form-group">
-              <div class="auth-form__input-group">
-                <input
-                  class="auth-form__form-control"
-                  type="text"
-                  placeholder="Mã xác minh"
-                />
-                <div class="auth-form__capcha-submit">
-                  <button class="btn">Gửi mã xác minh</button>
-                </div>
-              </div>
-            </div>
-            <div class="auth-form__aside">
-              Bằng việc đăng kí, bạn đã đồng ý với Tiki về
-              <a class="link link--primary">Điều khoản dịch vụ</a> &
-              <a class="link link--primary">Chính sách bảo mật</a>
+            <div class="auth-form__aside auth-form__login-aside">
+              <div class="link link--primary">Quên mật khẩu</div>
+              <span class="auth-form__aside--separate"></span>
+              <div class="link link--secondary">Cần trợ giúp?</div>
             </div>
             <div class="auth-form__controls">
               <button class="btn btn--standard">TRỞ LẠI</button>
-              <button class="btn btn--primary">ĐĂNG KÝ</button>
+              <button class="btn btn--primary">ĐĂNG NHẬP</button>
             </div>
           </div>
           <div class="auth-form__footer">

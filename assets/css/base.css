@@ -1,7 +1,7 @@
 :root {
   /* --white-color: #fff;
     --black-color: #000; */
-  --primary-color: rgb(26, 148, 255);
+  --primary-color: #65C18C;
   --text-color: #333;
   --background-color: #f5f5fa;
   /* BLUE */
@@ -39,7 +39,7 @@ ul {
 }
 
 .container-fluid {
-  width: 1200px;
+  width: 1240px;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -48,15 +48,45 @@ ul {
   width: 100%;
 }
 
-.dflex {
-  display: flex;
+.row {
+  display: flex;  
 }
-
-.dflex--wrap {
-  display: flex;
-  flex-wrap: wrap;
+.col:first-child {
+  padding-right: 12px;
+  padding-left: 0 
 }
-
+.col:last-child {
+  padding-left: 12px;
+  padding-right: 0 
+}
+.col-1 {
+  width: 100%/12;
+  padding: 0 12px;
+}
+.col-2 {
+  width: calc(100%/6);
+  padding: 0 12px;
+}
+.col-3 {
+  width: calc(100%/4);
+  padding: 0 12px;
+}
+.col-4 {
+  width: calc(100%/3);
+  padding: 0 12px;
+}
+.col-6 {
+  width: calc(100%/2);
+  padding: 0 12px;
+}
+.col-10 {
+  width: calc(100% - 100%/6);
+  padding: 0 12px;
+}
+.col-12 {
+  width: 100%;
+  padding: 0 12px;
+}
 .link {
   display: inline-block;
   text-decoration: none;
@@ -75,10 +105,16 @@ ul {
   color: var(--primary-color);
 }
 
+.link--secondary {
+  color: #777
+}
+
 .link:hover {
   opacity: 0.7;
 }
-
+.link--hover-primary:hover {
+  color: var(--primary-color);
+}
 /* DISCOUNT STYLE */
 .discount {
   font-weight: 400;
@@ -154,9 +190,10 @@ ul {
   bottom: 0;
   left: 0;
   right: 0;
-  /* display: none; */
+  display: none;
   z-index: 1003; 
   align-items: center;
+  animation: fadeIn .2s linear;
 }
 
 /* OVERLAY */
@@ -178,15 +215,14 @@ ul {
 }
 
 /* OVERLAY WHEN ENTERING SIGN UP & LOGIN FORM */
-.modal.modal--login-form #login {
-  display: block;
-}
-
+.modal.modal--login-form #login,
 .modal.modal--register-form #register {
   display: block;
 }
 
 .modal__body {
+  --scale-from: .7;
+  --scale-to: 1;
   position: relative;
   z-index: 1;
   background-color: #fff;
@@ -195,6 +231,7 @@ ul {
   margin: auto;  
   max-width: 1000px;
   overflow: hidden;
+  animation: scale linear .2s;
 }
 
 /* BUTTON */
@@ -207,6 +244,7 @@ ul {
   font-size: 1.4rem;
   padding: .75rem 2rem;
   transition: all .2s; 
+  text-decoration: none;
 }
 
 .btn:active {
@@ -218,18 +256,34 @@ ul {
 }
 
 .btn:hover {
-  opacity: .9 ;
+  opacity: .8 ;
 }
 
 .btn--primary {
   background-color: var(--primary-color);
   color: #fff
 }
-
+.btn--standard {
+  background-color: #fff;
+  color: var(--text-color);
+}
+.btn--disabled {
+  background-color: #fff;
+  color: var(--text-color);
+  opacity: .5;
+  cursor: default;
+}
+.btn--disabled:hover {
+  opacity: .5;
+}
+.btn--disabled:active {
+  transform: none;
+}
 /* Icon button */
 .icon-btn {
   display: flex;
   align-items: center;  
+  text-align: center;
 }
 
 .icon-btn.facebook {
@@ -245,10 +299,12 @@ ul {
   width: 16px;
   background-color: white;
   border-radius: 2px;
-  margin-right: 1.5rem;
+  /* margin-right: 1.5rem; */
 }
 
-
+.icon-btn > span {
+  flex: 1
+}
 /* ------------------ ANIMATION ---------------- */
 
 @keyframes fadeIn {
@@ -257,5 +313,14 @@ ul {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(var(--scale-from));
+  }
+  to {
+    transform: scale(var(--scale-to));
   }
 }
