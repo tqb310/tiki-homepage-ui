@@ -91,7 +91,7 @@
 .header__user-info-item {
   font-weight: 500;
 }
-.header__user-info-list .header__user-info-item > a {  
+.header__user-info-item > a {  
   display: block;
   padding: .5rem 1rem
 }
@@ -724,6 +724,7 @@
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
+  border-radius: 3px;
 }
 .main__product-filter .product-filter-btn {
   margin-left: 1rem;
@@ -782,9 +783,79 @@
   padding: 1rem;
   color: #555
 }
+/* .main__home-products {  } */
 .main__product-filter-select-item {
   padding: .7rem 0;
 }
+.home-products__item {
+  position: relative;
+  background-color: #fff;
+  text-decoration: none;  
+  color: var(--text-color)
+}
+/* .home-products__item-thumnail {} */
+.home-products__item-thumnail-overlay {
+  position: absolute;
+  top: 0;
+  left: 1%;
+}
+.home-products__content {
+  padding: 1rem;
+}
+.home-products__content-name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+  margin: 0 0 .5rem;  
+  font-size: 1.4rem;  
+}
+.home-products__content-sales-promotion {
+  font-size: 1.1rem;
+  color: var(--dark-red);
+  border: 1px solid var(--dark-red);
+  padding: .1rem .2rem;
+}
+.home-products__content-price {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  margin-top: .5rem;  
+  flex: 1;
+}
+.home-products__freeship {
+  width: 24px;
+}
+.home-products__content-original-price {
+  color: #777;
+  text-decoration: line-through;
+}
+.home-products__content-original-price + span {
+  color: #777;
+}
+.home-products__content-discounted-price,
+.home-products__content-discounted-price + span {
+  color: var(--dark-red)
+}
+.home-products__reaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem
+}
+.home-products__heart {
+  color: #777
+}
+.home-products__rating {
+  color: var(--dark-yellow)
+}
+.home-products__aside {
+  font-size: 1.2rem;
+  margin-top: .5rem;
+  display: flex;
+  justify-content: space-between;  
+}
+
 /* FORM */
 .auth-form {
   width: 500px;  
