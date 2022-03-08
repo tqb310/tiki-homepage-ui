@@ -21,13 +21,14 @@
       rel="stylesheet"
       href="./assets/fonts/fontawesome-free-6.0.0-web/css/all.min.css"
     />
+    <link rel="stylesheet" href="./assets/css/grid.css" />    
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
     <div class="app">
       <header class="header">
-        <div class="container-fluid">
+        <div class="grid wide">
           <nav class="header__navbar">
             <ul class="header__navbar-list">
               <li class="header__navbar-item header__navbar-item--separate">
@@ -394,7 +395,7 @@
                 <span>Giỏ Hàng</span>
                 <div class="header__cart-list">
                   <div
-                    class="header__cart-list-inner header__cart-list-inner--no-cart"
+                    class="header__cart-list-inner header__cart-list-inner--has-cart"
                   >
                     <img src="./assets/images/no-cart.png" alt="no cart" />
                     <p class="header__no-cart-title">Chưa có sản phẩm</p>
@@ -467,7 +468,7 @@
       </header>
       <main class="main">
         <div class="main__navbar">
-          <div class="container-fluid">
+          <div class="grid wide">
             <ul class="main__navbar-list">
               <li class="main__navbar-item">
                 <a class="link" href="#">Thịt, Rau Củ</a>
@@ -523,7 +524,7 @@
             </ul>
           </div>
         </div>
-        <div class="container-fluid">
+        <div class="grid wide">
           <div class="main__banner">
             <div class="main__slide-banner">
               <img src="./assets/images/banner.png" alt="banner" />
@@ -1865,7 +1866,7 @@
                 <li class="pagination-item">
                   <a class="pagination-item__link" href="#"> &#10094; </a>
                 </li>
-                <li class="pagination-item">
+                <li class="pagination-item active">
                   <a class="pagination-item__link" href="#">1</a>
                 </li>
                 <li class="pagination-item">
@@ -1877,7 +1878,7 @@
                 <li class="pagination-item">
                   <a class="pagination-item__link" href="#">4</a>
                 </li>
-                <li class="pagination-item active">
+                <li class="pagination-item">
                   <a class="pagination-item__link" href="#">5</a>
                 </li>
                 <li class="pagination-item">
@@ -1894,7 +1895,91 @@
           </div>
         </div>
       </main>
-      <footer class="footer"></footer>
+      <footer class="footer">
+        <div class="grid wide">
+          <div class="row">
+            <div class="col col-2-4">
+              <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+              <ul class="footer__list">
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Trung Tâm Trợ Giúp</a></li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Hướng Dẫn Mua Hàng</a></li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Hướng Dẫn Bán Hàng</a></li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Thanh Toán</a></li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Vận Chuyển</a></li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">Trả Hàng & Hoàn Tiền</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">Chăm Sóc Khách Hàng</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">Chính Sách Bảo Hành</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col col-2-4">
+              <h3 class="footer__heading">Giới thiệu</h3>
+              <ul class="footer__list">
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Giới Thiệu Về Shop</a></li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Tuyển Dụng</a></li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Điều Khoản</a></li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Chính Sách Bảo Mật</a></li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Chính Hãng</a></li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Kênh Người Bán</a></li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">Flash Sales</a></li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">Liên Hệ Với Truyền Thông</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col col-2-4">
+              <h3 class="footer__heading">Thanh toán</h3>
+              <img class="footer__payment-img" src="./assets/images/visa.png" alt="visa">
+              <img class="footer__payment-img" src="./assets/images/paypal.png" alt="paypal.png">
+              <img class="footer__payment-img" src="./assets/images/bitcoin.png" alt="bitcoin.png">
+            </div>
+            <div class="col col-2-4">
+              <h3 class="footer__heading">Theo dõi</h3>
+              <ul class="footer__list">
+                <li class="footer__item"><a href="#" class="link link--hover-primary">
+                  <i class="fa-brands fa-facebook"></i>Facebook</a>
+                </li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">
+                  <i class="fa-brands fa-instagram-square"></i>Instagram</a>
+                </li>
+                <li class="footer__item"><a href="#" class="link link--hover-primary">
+                  <i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col col-2-4">
+              <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
+              <div class="footer__apps-store">
+                <img
+                  src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/d91264e165ed6facc6178994d5afae79.png"
+                  alt="QR code"
+                />
+                <div class="footer__app">
+                  <a href="#"
+                    ><img
+                      src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/39f189e19764dab688d3850742f13718.png"
+                      alt="App store"
+                  /></a>
+                  <a href="#">
+                    <img
+                      src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/f4f5426ce757aea491dce94201560583.png"
+                      alt="CH play"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row footer__copyright">
+            <h4>© Lấy template từ shopee & tiki</h4>
+          </div>
+        </div>
+      </footer>
     </div>
     <div class="modal modal--login-form">
       <div class="modal__overlay"></div>
