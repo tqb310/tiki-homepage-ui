@@ -21,15 +21,16 @@
       rel="stylesheet"
       href="./assets/fonts/fontawesome-free-6.0.0-web/css/all.min.css"
     />
-    <link rel="stylesheet" href="./assets/css/grid.css" />    
+    <link rel="stylesheet" href="./assets/css/grid.css" />
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
   </head>
   <body>
     <div class="app">
       <header class="header">
         <div class="grid wide">
-          <nav class="header__navbar">
+          <nav class="header__navbar hide-on-tablet-mobile">
             <ul class="header__navbar-list">
               <li class="header__navbar-item header__navbar-item--separate">
                 <a href="#" class="link link--white">Kênh người bán</a>
@@ -179,7 +180,7 @@
                   Hỗ trợ
                 </a>
               </li>
-              <li class="header__navbar-item header__navbar-item--has-user">
+              <li class="header__navbar-item header__navbar-item--no-user">
                 <div class="header__user-info">
                   <i class="fa-solid fa-user"></i>
                   <span class="header__navbar-username">Trương Quốc Bảo</span>
@@ -201,25 +202,34 @@
                   </ul>
                 </div>
               </li>
-              <!-- <li
+              <li
+                id="register-btn"
                 class="header__navbar-item header__navbar-item--separate header__navbar-item--strong"
               >
-                <a href="#" class="link link--white">Đăng ký</a>
+                <a class="link link--white">Đăng ký</a>
               </li>
-              <li class="header__navbar-item header__navbar-item--strong">
-                <a href="#" class="link link--white">Đăng nhập</a>
-              </li> -->
+              <li
+                id="login-btn"
+                class="header__navbar-item header__navbar-item--strong"
+              >
+                <a class="link link--white">Đăng nhập</a>
+              </li>
             </ul>
           </nav>
           <div class="header__tools">
-            <a class="header__logo-link" href="/">
+            <input type="checkbox" id="mobile-search" hidden />
+            <label class="header__search-icon-mobile" for="mobile-search">
+              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+              <i class="fa-solid fa-xmark fa-lg"></i>
+            </label>
+            <a class="header__logo-link hide-on-tablet" href="/">
               <img
                 class="header__logo"
                 src="./assets/images/tiki-logo.png"
                 alt="tiki-logo"
               />
               <img
-                class="header__freeship"
+                class="header__freeship hide-on-mobile"
                 src="./assets/images/freeship.png"
                 alt="freeship"
               />
@@ -227,6 +237,7 @@
             <div class="header__search-wrapper">
               <div class="header__search-bar">
                 <input
+                  id="search-input"
                   type="text"
                   placeholder="Tìm sản phẩm, danh mục hay thương hiệu mong muốn ..."
                 />
@@ -362,7 +373,7 @@
                   </ul>
                 </div>
               </div>
-              <ul class="header__search-tags">
+              <ul class="header__search-tags hide-on-tablet-mobile">
                 <li class="header__search-tag-item">
                   <a class="link link--white" href="#">trái cây</a>
                 </li>
@@ -390,7 +401,7 @@
               <div>
                 <div class="header__cart">
                   <img src="./assets/images/cart.png" alt="cart" />
-                  <span class="header__cart-badge">0</span>
+                  <span class="header__cart-badge">3</span>
                 </div>
                 <span>Giỏ Hàng</span>
                 <div class="header__cart-list">
@@ -469,7 +480,7 @@
       <main class="main">
         <div class="main__navbar">
           <div class="grid wide">
-            <ul class="main__navbar-list">
+            <ul class="main__navbar-list hide-on-low-pc">
               <li class="main__navbar-item">
                 <a class="link" href="#">Thịt, Rau Củ</a>
               </li>
@@ -522,14 +533,43 @@
               <li class="main__navbar-item">Thể Thao</li>
               <li class="main__navbar-item">Máy Ảnh</li> -->
             </ul>
+            <ul class="main__sort-bar">
+              <li class="main__sort-bar-item active separate">
+                <a class="link link--hover-primary" href="#"> Liên quan </a>
+              </li>
+              <li class="main__sort-bar-item separate">
+                <a class="link link--hover-primary" href="#"> Mới nhất </a>
+              </li>
+              <li class="main__sort-bar-item separate">
+                <a class="link link--hover-primary" href="#"> Bán chạy </a>
+              </li>
+              <li class="main__sort-bar-item">
+                <a class="link link--hover-primary" href="#"> Giá </a>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="grid wide">
-          <div class="main__banner">
-            <div class="main__slide-banner">
-              <img src="./assets/images/banner.png" alt="banner" />
+          <div class="main__banner row">
+            <div class="col col-lg-8 col-sm-12">
+              <div class="main__slide-banner">
+                <div class="main__slide-banner-inner">
+                  <img src="./assets/images/banner.png" alt="banner" />
+                  <img src="./assets/images/banner2.png" alt="banner2" />
+                  <img src="./assets/images/banner3.png" alt="banner3" />
+                  <img src="./assets/images/banner4.png" alt="banner4" />
+                </div>
+                <span class="main__slide-banner-pre">&#10094;</span>
+                <span class="main__slide-banner-next">&#10095;</span>
+                <ul class="main__slide-banner-carousels">
+                  <li class="main__slide-banner-carousel active"></li>
+                  <li class="main__slide-banner-carousel"></li>
+                  <li class="main__slide-banner-carousel"></li>
+                  <li class="main__slide-banner-carousel"></li>
+                </ul>
+              </div>
             </div>
-            <div class="main__aside-banner">
+            <div class="main__aside-banner col col-lg-4 col-sm-0">
               <img src="./assets/images/aside-banner.png" alt="aside banner" />
             </div>
           </div>
@@ -537,12 +577,12 @@
             <div class="main__hot-sale-header">
               <div>
                 <img src="./assets/images/giasoc.svg" alt="gia soc" />
-                <img src="./assets/images/dealFlashIcon.svg" alt="flash" />
+                <img class="main__flash-icon" src="./assets/images/dealFlashIcon.svg" alt="flash" />
                 <img src="./assets/images/homnay.svg" alt="hom nay" />
               </div>
               <div class="main__hot-sale-time">
-                <span>00</span> : <span>00</span> :
-                <span>39</span>
+                <span id="h">00</span> : <span id="m">00</span> :
+                <span id="s">39</span>
                 &#10095;
               </div>
             </div>
@@ -635,8 +675,8 @@
               </div>
             </div>
           </div>
-          <div class="main__products row">
-            <div class="main__category col col-2">
+          <div class="main__products row sm-gutter">
+            <div class="main__category col col-lg-2 col-md-0 col-sm-0">
               <div class="main__category-heading">
                 <i class="fa-solid fa-list-ul"></i>
                 <span class="main__category-heading-title">Danh mục</span>
@@ -662,8 +702,8 @@
                 </li>
               </ul>
             </div>
-            <div class="col col-10">
-              <div class="main__product-filter">
+            <div class="col col-lg-10 col-md-12 col-sm-12">
+              <div class="main__product-filter hide-on-tablet-mobile">
                 <div class="main__product-filter-control">
                   <span class="main__product-filter-title">Sắp xếp theo</span>
                   <button class="btn btn--standard product-filter-btn">
@@ -708,8 +748,8 @@
                 </div>
               </div>
               <div class="main__home-products">
-                <div class="row">
-                  <div class="col col-2-4">
+                <div class="row sm-gutter">
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
                     <a href="#" class="home-products__item">
                       <div class="home-products__item-thumnail">
                         <img
@@ -790,7 +830,7 @@
                       </span>
                     </a>
                   </div>
-                  <div class="col col-2-4">
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
                     <a href="#" class="home-products__item">
                       <div class="home-products__item-thumnail">
                         <img
@@ -863,88 +903,7 @@
                       </span>
                     </a>
                   </div>
-                  <div class="col col-2-4">
-                    <a href="#" class="home-products__item">
-                      <div class="home-products__item-thumnail">
-                        <img
-                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
-                          width="100%"
-                          alt="vay, dam"
-                        />
-                        <div class="home-products__item-thumnail-overlay">
-                          <img
-                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
-                            width="100%"
-                            alt="promotion"
-                          />
-                        </div>
-                        <div class="home-products__favourite-item">
-                          <i class="fa-solid fa-check"></i>
-                          Yêu thích
-                        </div>
-                        <div class="home-products__off">
-                          <span class="home-products__rate-off">45%</span>
-                          <span class="home-products__off-msg">GIẢM</span>
-                        </div>
-                      </div>
-                      <div class="home-products__content">
-                        <h4 class="home-products__content-name">
-                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
-                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
-                          bèo
-                        </h4>
-                        <div>
-                          <span class="home-products__content-sales-promotion">
-                            Mua để nhận quà
-                          </span>
-                        </div>
-                        <div class="home-products__content-price">
-                          <div>
-                            <span class="home-products__content-original-price">
-                              125.000
-                            </span>
-                            <span class="currency">đ</span>
-                            -
-                            <span
-                              class="home-products__content-discounted-price"
-                            >
-                              68.000
-                            </span>
-                            <span class="currency">đ</span>
-                          </div>
-                          <div class="home-products__freeship">
-                            <img
-                              src="./assets/images/free-delivery.png"
-                              alt="freeship"
-                              width="100%"
-                            />
-                          </div>
-                        </div>
-                        <div class="home-products__reaction">
-                          <div class="home-products__heart">
-                            <i class="fa-regular fa-heart fa-xs"></i>
-                          </div>
-                          <div class="home-products__rating">
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                          </div>
-                        </div>
-                        <div class="home-products__aside">
-                          <div class="home-products__brand">Whoo</div>
-                          <div class="home-products__sales">
-                            Đã bán <span>1k</span>
-                          </div>
-                        </div>
-                      </div>
-                      <span class="btn btn--primary related-products">
-                        Tìm sản phẩm tương tự
-                      </span>
-                    </a>
-                  </div>
-                  <div class="col col-2-4">
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
                     <a href="#" class="home-products__item">
                       <div class="home-products__item-thumnail">
                         <img
@@ -1025,153 +984,7 @@
                       </span>
                     </a>
                   </div>
-                  <div class="col col-2-4">
-                    <a href="#" class="home-products__item">
-                      <div class="home-products__item-thumnail">
-                        <img
-                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
-                          width="100%"
-                          alt="vay, dam"
-                        />
-                        <div class="home-products__item-thumnail-overlay">
-                          <img
-                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
-                            width="100%"
-                            alt="promotion"
-                          />
-                        </div>
-                      </div>
-                      <div class="home-products__content">
-                        <h4 class="home-products__content-name">
-                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
-                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
-                          bèo
-                        </h4>
-                        <div>
-                          <span class="home-products__content-sales-promotion">
-                            Mua để nhận quà
-                          </span>
-                        </div>
-                        <div class="home-products__content-price">
-                          <div>
-                            <span class="home-products__content-original-price">
-                              125.000
-                            </span>
-                            <span class="currency">đ</span>
-                            -
-                            <span
-                              class="home-products__content-discounted-price"
-                            >
-                              68.000
-                            </span>
-                            <span class="currency">đ</span>
-                          </div>
-                          <div class="home-products__freeship">
-                            <img
-                              src="./assets/images/free-delivery.png"
-                              alt="freeship"
-                              width="100%"
-                            />
-                          </div>
-                        </div>
-                        <div class="home-products__reaction">
-                          <div class="home-products__heart">
-                            <i class="fa-regular fa-heart fa-xs"></i>
-                          </div>
-                          <div class="home-products__rating">
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                          </div>
-                        </div>
-                        <div class="home-products__aside">
-                          <div class="home-products__brand">Whoo</div>
-                          <div class="home-products__sales">
-                            Đã bán <span>1k</span>
-                          </div>
-                        </div>
-                      </div>
-                      <span class="btn btn--primary related-products">
-                        Tìm sản phẩm tương tự
-                      </span>
-                    </a>
-                  </div>
-                  <div class="col col-2-4">
-                    <a href="#" class="home-products__item">
-                      <div class="home-products__item-thumnail">
-                        <img
-                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
-                          width="100%"
-                          alt="vay, dam"
-                        />
-                        <div class="home-products__item-thumnail-overlay">
-                          <img
-                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
-                            width="100%"
-                            alt="promotion"
-                          />
-                        </div>
-                      </div>
-                      <div class="home-products__content">
-                        <h4 class="home-products__content-name">
-                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
-                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
-                          bèo
-                        </h4>
-                        <div>
-                          <span class="home-products__content-sales-promotion">
-                            Mua để nhận quà
-                          </span>
-                        </div>
-                        <div class="home-products__content-price">
-                          <div>
-                            <span class="home-products__content-original-price">
-                              125.000
-                            </span>
-                            <span class="currency">đ</span>
-                            -
-                            <span
-                              class="home-products__content-discounted-price"
-                            >
-                              68.000
-                            </span>
-                            <span class="currency">đ</span>
-                          </div>
-                          <div class="home-products__freeship">
-                            <img
-                              src="./assets/images/free-delivery.png"
-                              alt="freeship"
-                              width="100%"
-                            />
-                          </div>
-                        </div>
-                        <div class="home-products__reaction">
-                          <div class="home-products__heart">
-                            <i class="fa-regular fa-heart fa-xs"></i>
-                          </div>
-                          <div class="home-products__rating">
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                          </div>
-                        </div>
-                        <div class="home-products__aside">
-                          <div class="home-products__brand">Whoo</div>
-                          <div class="home-products__sales">
-                            Đã bán <span>1k</span>
-                          </div>
-                        </div>
-                      </div>
-                      <span class="btn btn--primary related-products">
-                        Tìm sản phẩm tương tự
-                      </span>
-                    </a>
-                  </div>
-                  <div class="col col-2-4">
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
                     <a href="#" class="home-products__item">
                       <div class="home-products__item-thumnail">
                         <img
@@ -1252,7 +1065,153 @@
                       </span>
                     </a>
                   </div>
-                  <div class="col col-2-4">
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
+                    <a href="#" class="home-products__item">
+                      <div class="home-products__item-thumnail">
+                        <img
+                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
+                          width="100%"
+                          alt="vay, dam"
+                        />
+                        <div class="home-products__item-thumnail-overlay">
+                          <img
+                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
+                            width="100%"
+                            alt="promotion"
+                          />
+                        </div>
+                      </div>
+                      <div class="home-products__content">
+                        <h4 class="home-products__content-name">
+                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
+                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
+                          bèo
+                        </h4>
+                        <div>
+                          <span class="home-products__content-sales-promotion">
+                            Mua để nhận quà
+                          </span>
+                        </div>
+                        <div class="home-products__content-price">
+                          <div>
+                            <span class="home-products__content-original-price">
+                              125.000
+                            </span>
+                            <span class="currency">đ</span>
+                            -
+                            <span
+                              class="home-products__content-discounted-price"
+                            >
+                              68.000
+                            </span>
+                            <span class="currency">đ</span>
+                          </div>
+                          <div class="home-products__freeship">
+                            <img
+                              src="./assets/images/free-delivery.png"
+                              alt="freeship"
+                              width="100%"
+                            />
+                          </div>
+                        </div>
+                        <div class="home-products__reaction">
+                          <div class="home-products__heart">
+                            <i class="fa-regular fa-heart fa-xs"></i>
+                          </div>
+                          <div class="home-products__rating">
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                          </div>
+                        </div>
+                        <div class="home-products__aside">
+                          <div class="home-products__brand">Whoo</div>
+                          <div class="home-products__sales">
+                            Đã bán <span>1k</span>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="btn btn--primary related-products">
+                        Tìm sản phẩm tương tự
+                      </span>
+                    </a>
+                  </div>
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
+                    <a href="#" class="home-products__item">
+                      <div class="home-products__item-thumnail">
+                        <img
+                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
+                          width="100%"
+                          alt="vay, dam"
+                        />
+                        <div class="home-products__item-thumnail-overlay">
+                          <img
+                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
+                            width="100%"
+                            alt="promotion"
+                          />
+                        </div>
+                      </div>
+                      <div class="home-products__content">
+                        <h4 class="home-products__content-name">
+                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
+                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
+                          bèo
+                        </h4>
+                        <div>
+                          <span class="home-products__content-sales-promotion">
+                            Mua để nhận quà
+                          </span>
+                        </div>
+                        <div class="home-products__content-price">
+                          <div>
+                            <span class="home-products__content-original-price">
+                              125.000
+                            </span>
+                            <span class="currency">đ</span>
+                            -
+                            <span
+                              class="home-products__content-discounted-price"
+                            >
+                              68.000
+                            </span>
+                            <span class="currency">đ</span>
+                          </div>
+                          <div class="home-products__freeship">
+                            <img
+                              src="./assets/images/free-delivery.png"
+                              alt="freeship"
+                              width="100%"
+                            />
+                          </div>
+                        </div>
+                        <div class="home-products__reaction">
+                          <div class="home-products__heart">
+                            <i class="fa-regular fa-heart fa-xs"></i>
+                          </div>
+                          <div class="home-products__rating">
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                          </div>
+                        </div>
+                        <div class="home-products__aside">
+                          <div class="home-products__brand">Whoo</div>
+                          <div class="home-products__sales">
+                            Đã bán <span>1k</span>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="btn btn--primary related-products">
+                        Tìm sản phẩm tương tự
+                      </span>
+                    </a>
+                  </div>
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
                     <a href="#" class="home-products__item">
                       <div class="home-products__item-thumnail">
                         <img
@@ -1333,226 +1292,7 @@
                       </span>
                     </a>
                   </div>
-                  <div class="col col-2-4">
-                    <a href="#" class="home-products__item">
-                      <div class="home-products__item-thumnail">
-                        <img
-                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
-                          width="100%"
-                          alt="vay, dam"
-                        />
-                        <div class="home-products__item-thumnail-overlay">
-                          <img
-                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
-                            width="100%"
-                            alt="promotion"
-                          />
-                        </div>
-                      </div>
-                      <div class="home-products__content">
-                        <h4 class="home-products__content-name">
-                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
-                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
-                          bèo
-                        </h4>
-                        <div>
-                          <span class="home-products__content-sales-promotion">
-                            Mua để nhận quà
-                          </span>
-                        </div>
-                        <div class="home-products__content-price">
-                          <div>
-                            <span class="home-products__content-original-price">
-                              125.000
-                            </span>
-                            <span class="currency">đ</span>
-                            -
-                            <span
-                              class="home-products__content-discounted-price"
-                            >
-                              68.000
-                            </span>
-                            <span class="currency">đ</span>
-                          </div>
-                          <div class="home-products__freeship">
-                            <img
-                              src="./assets/images/free-delivery.png"
-                              alt="freeship"
-                              width="100%"
-                            />
-                          </div>
-                        </div>
-                        <div class="home-products__reaction">
-                          <div class="home-products__heart">
-                            <i class="fa-regular fa-heart fa-xs"></i>
-                          </div>
-                          <div class="home-products__rating">
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                          </div>
-                        </div>
-                        <div class="home-products__aside">
-                          <div class="home-products__brand">Whoo</div>
-                          <div class="home-products__sales">
-                            Đã bán <span>1k</span>
-                          </div>
-                        </div>
-                      </div>
-                      <span class="btn btn--primary related-products">
-                        Tìm sản phẩm tương tự
-                      </span>
-                    </a>
-                  </div>
-                  <div class="col col-2-4">
-                    <a href="#" class="home-products__item">
-                      <div class="home-products__item-thumnail">
-                        <img
-                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
-                          width="100%"
-                          alt="vay, dam"
-                        />
-                        <div class="home-products__item-thumnail-overlay">
-                          <img
-                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
-                            width="100%"
-                            alt="promotion"
-                          />
-                        </div>
-                      </div>
-                      <div class="home-products__content">
-                        <h4 class="home-products__content-name">
-                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
-                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
-                          bèo
-                        </h4>
-                        <div>
-                          <span class="home-products__content-sales-promotion">
-                            Mua để nhận quà
-                          </span>
-                        </div>
-                        <div class="home-products__content-price">
-                          <div>
-                            <span class="home-products__content-original-price">
-                              125.000
-                            </span>
-                            <span class="currency">đ</span>
-                            -
-                            <span
-                              class="home-products__content-discounted-price"
-                            >
-                              68.000
-                            </span>
-                            <span class="currency">đ</span>
-                          </div>
-                          <div class="home-products__freeship">
-                            <img
-                              src="./assets/images/free-delivery.png"
-                              alt="freeship"
-                              width="100%"
-                            />
-                          </div>
-                        </div>
-                        <div class="home-products__reaction">
-                          <div class="home-products__heart">
-                            <i class="fa-regular fa-heart fa-xs"></i>
-                          </div>
-                          <div class="home-products__rating">
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                          </div>
-                        </div>
-                        <div class="home-products__aside">
-                          <div class="home-products__brand">Whoo</div>
-                          <div class="home-products__sales">
-                            Đã bán <span>1k</span>
-                          </div>
-                        </div>
-                      </div>
-                      <span class="btn btn--primary related-products">
-                        Tìm sản phẩm tương tự
-                      </span>
-                    </a>
-                  </div>
-                  <div class="col col-2-4">
-                    <a href="#" class="home-products__item">
-                      <div class="home-products__item-thumnail">
-                        <img
-                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
-                          width="100%"
-                          alt="vay, dam"
-                        />
-                        <div class="home-products__item-thumnail-overlay">
-                          <img
-                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
-                            width="100%"
-                            alt="promotion"
-                          />
-                        </div>
-                      </div>
-                      <div class="home-products__content">
-                        <h4 class="home-products__content-name">
-                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
-                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
-                          bèo
-                        </h4>
-                        <div>
-                          <span class="home-products__content-sales-promotion">
-                            Mua để nhận quà
-                          </span>
-                        </div>
-                        <div class="home-products__content-price">
-                          <div>
-                            <span class="home-products__content-original-price">
-                              125.000
-                            </span>
-                            <span class="currency">đ</span>
-                            -
-                            <span
-                              class="home-products__content-discounted-price"
-                            >
-                              68.000
-                            </span>
-                            <span class="currency">đ</span>
-                          </div>
-                          <div class="home-products__freeship">
-                            <img
-                              src="./assets/images/free-delivery.png"
-                              alt="freeship"
-                              width="100%"
-                            />
-                          </div>
-                        </div>
-                        <div class="home-products__reaction">
-                          <div class="home-products__heart">
-                            <i class="fa-regular fa-heart fa-xs"></i>
-                          </div>
-                          <div class="home-products__rating">
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                            <i class="fa-solid fa-star fa-xs rating"></i>
-                          </div>
-                        </div>
-                        <div class="home-products__aside">
-                          <div class="home-products__brand">Whoo</div>
-                          <div class="home-products__sales">
-                            Đã bán <span>1k</span>
-                          </div>
-                        </div>
-                      </div>
-                      <span class="btn btn--primary related-products">
-                        Tìm sản phẩm tương tự
-                      </span>
-                    </a>
-                  </div>
-                  <div class="col col-2-4">
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
                     <a href="#" class="home-products__item">
                       <div class="home-products__item-thumnail">
                         <img
@@ -1633,7 +1373,226 @@
                       </span>
                     </a>
                   </div>
-                  <div class="col col-2-4">
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
+                    <a href="#" class="home-products__item">
+                      <div class="home-products__item-thumnail">
+                        <img
+                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
+                          width="100%"
+                          alt="vay, dam"
+                        />
+                        <div class="home-products__item-thumnail-overlay">
+                          <img
+                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
+                            width="100%"
+                            alt="promotion"
+                          />
+                        </div>
+                      </div>
+                      <div class="home-products__content">
+                        <h4 class="home-products__content-name">
+                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
+                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
+                          bèo
+                        </h4>
+                        <div>
+                          <span class="home-products__content-sales-promotion">
+                            Mua để nhận quà
+                          </span>
+                        </div>
+                        <div class="home-products__content-price">
+                          <div>
+                            <span class="home-products__content-original-price">
+                              125.000
+                            </span>
+                            <span class="currency">đ</span>
+                            -
+                            <span
+                              class="home-products__content-discounted-price"
+                            >
+                              68.000
+                            </span>
+                            <span class="currency">đ</span>
+                          </div>
+                          <div class="home-products__freeship">
+                            <img
+                              src="./assets/images/free-delivery.png"
+                              alt="freeship"
+                              width="100%"
+                            />
+                          </div>
+                        </div>
+                        <div class="home-products__reaction">
+                          <div class="home-products__heart">
+                            <i class="fa-regular fa-heart fa-xs"></i>
+                          </div>
+                          <div class="home-products__rating">
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                          </div>
+                        </div>
+                        <div class="home-products__aside">
+                          <div class="home-products__brand">Whoo</div>
+                          <div class="home-products__sales">
+                            Đã bán <span>1k</span>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="btn btn--primary related-products">
+                        Tìm sản phẩm tương tự
+                      </span>
+                    </a>
+                  </div>
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
+                    <a href="#" class="home-products__item">
+                      <div class="home-products__item-thumnail">
+                        <img
+                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
+                          width="100%"
+                          alt="vay, dam"
+                        />
+                        <div class="home-products__item-thumnail-overlay">
+                          <img
+                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
+                            width="100%"
+                            alt="promotion"
+                          />
+                        </div>
+                      </div>
+                      <div class="home-products__content">
+                        <h4 class="home-products__content-name">
+                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
+                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
+                          bèo
+                        </h4>
+                        <div>
+                          <span class="home-products__content-sales-promotion">
+                            Mua để nhận quà
+                          </span>
+                        </div>
+                        <div class="home-products__content-price">
+                          <div>
+                            <span class="home-products__content-original-price">
+                              125.000
+                            </span>
+                            <span class="currency">đ</span>
+                            -
+                            <span
+                              class="home-products__content-discounted-price"
+                            >
+                              68.000
+                            </span>
+                            <span class="currency">đ</span>
+                          </div>
+                          <div class="home-products__freeship">
+                            <img
+                              src="./assets/images/free-delivery.png"
+                              alt="freeship"
+                              width="100%"
+                            />
+                          </div>
+                        </div>
+                        <div class="home-products__reaction">
+                          <div class="home-products__heart">
+                            <i class="fa-regular fa-heart fa-xs"></i>
+                          </div>
+                          <div class="home-products__rating">
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                          </div>
+                        </div>
+                        <div class="home-products__aside">
+                          <div class="home-products__brand">Whoo</div>
+                          <div class="home-products__sales">
+                            Đã bán <span>1k</span>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="btn btn--primary related-products">
+                        Tìm sản phẩm tương tự
+                      </span>
+                    </a>
+                  </div>
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
+                    <a href="#" class="home-products__item">
+                      <div class="home-products__item-thumnail">
+                        <img
+                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
+                          width="100%"
+                          alt="vay, dam"
+                        />
+                        <div class="home-products__item-thumnail-overlay">
+                          <img
+                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
+                            width="100%"
+                            alt="promotion"
+                          />
+                        </div>
+                      </div>
+                      <div class="home-products__content">
+                        <h4 class="home-products__content-name">
+                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
+                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
+                          bèo
+                        </h4>
+                        <div>
+                          <span class="home-products__content-sales-promotion">
+                            Mua để nhận quà
+                          </span>
+                        </div>
+                        <div class="home-products__content-price">
+                          <div>
+                            <span class="home-products__content-original-price">
+                              125.000
+                            </span>
+                            <span class="currency">đ</span>
+                            -
+                            <span
+                              class="home-products__content-discounted-price"
+                            >
+                              68.000
+                            </span>
+                            <span class="currency">đ</span>
+                          </div>
+                          <div class="home-products__freeship">
+                            <img
+                              src="./assets/images/free-delivery.png"
+                              alt="freeship"
+                              width="100%"
+                            />
+                          </div>
+                        </div>
+                        <div class="home-products__reaction">
+                          <div class="home-products__heart">
+                            <i class="fa-regular fa-heart fa-xs"></i>
+                          </div>
+                          <div class="home-products__rating">
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                          </div>
+                        </div>
+                        <div class="home-products__aside">
+                          <div class="home-products__brand">Whoo</div>
+                          <div class="home-products__sales">
+                            Đã bán <span>1k</span>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="btn btn--primary related-products">
+                        Tìm sản phẩm tương tự
+                      </span>
+                    </a>
+                  </div>
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
                     <a href="#" class="home-products__item">
                       <div class="home-products__item-thumnail">
                         <img
@@ -1714,7 +1673,88 @@
                       </span>
                     </a>
                   </div>
-                  <div class="col col-2-4">
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
+                    <a href="#" class="home-products__item">
+                      <div class="home-products__item-thumnail">
+                        <img
+                          src="https://cf.shopee.vn/file/b003c8fc46c1f8b1631f16bc50cc2e9b_tn"
+                          width="100%"
+                          alt="vay, dam"
+                        />
+                        <div class="home-products__item-thumnail-overlay">
+                          <img
+                            src="https://cf.shopee.vn/file/85b0d6e1777ca8eeeff346471a8cc062"
+                            width="100%"
+                            alt="promotion"
+                          />
+                        </div>
+                        <div class="home-products__favourite-item">
+                          <i class="fa-solid fa-check"></i>
+                          Yêu thích
+                        </div>
+                        <div class="home-products__off">
+                          <span class="home-products__rate-off">45%</span>
+                          <span class="home-products__off-msg">GIẢM</span>
+                        </div>
+                      </div>
+                      <div class="home-products__content">
+                        <h4 class="home-products__content-name">
+                          [Mã FAMARAL1 giảm 10K đơn 50K] váy trắng tiểu thư trễ
+                          vai tay bồng dáng dài hai lớp, đầm trắng dự tiệc bánh
+                          bèo
+                        </h4>
+                        <div>
+                          <span class="home-products__content-sales-promotion">
+                            Mua để nhận quà
+                          </span>
+                        </div>
+                        <div class="home-products__content-price">
+                          <div>
+                            <span class="home-products__content-original-price">
+                              125.000
+                            </span>
+                            <span class="currency">đ</span>
+                            -
+                            <span
+                              class="home-products__content-discounted-price"
+                            >
+                              68.000
+                            </span>
+                            <span class="currency">đ</span>
+                          </div>
+                          <div class="home-products__freeship">
+                            <img
+                              src="./assets/images/free-delivery.png"
+                              alt="freeship"
+                              width="100%"
+                            />
+                          </div>
+                        </div>
+                        <div class="home-products__reaction">
+                          <div class="home-products__heart">
+                            <i class="fa-regular fa-heart fa-xs"></i>
+                          </div>
+                          <div class="home-products__rating">
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                            <i class="fa-solid fa-star fa-xs rating"></i>
+                          </div>
+                        </div>
+                        <div class="home-products__aside">
+                          <div class="home-products__brand">Whoo</div>
+                          <div class="home-products__sales">
+                            Đã bán <span>1k</span>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="btn btn--primary related-products">
+                        Tìm sản phẩm tương tự
+                      </span>
+                    </a>
+                  </div>
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
                     <a href="#" class="home-products__item">
                       <div class="home-products__item-thumnail">
                         <img
@@ -1787,7 +1827,7 @@
                       </span>
                     </a>
                   </div>
-                  <div class="col col-2-4">
+                  <div class="col col-lg-2-4 col-md-4 col-sm-6">
                     <a href="#" class="home-products__item">
                       <div class="home-products__item-thumnail">
                         <img
@@ -1898,61 +1938,123 @@
       <footer class="footer">
         <div class="grid wide">
           <div class="row">
-            <div class="col col-2-4">
+            <div class="col col-lg-2-4 col-md-4 col-sm-6">
               <h3 class="footer__heading">Chăm sóc khách hàng</h3>
               <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Trung Tâm Trợ Giúp</a></li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Hướng Dẫn Mua Hàng</a></li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Hướng Dẫn Bán Hàng</a></li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Thanh Toán</a></li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Vận Chuyển</a></li>
                 <li class="footer__item">
-                  <a href="#" class="link link--hover-primary">Trả Hàng & Hoàn Tiền</a>
+                  <a href="#" class="link link--hover-primary"
+                    >Trung Tâm Trợ Giúp</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="#" class="link link--hover-primary">Chăm Sóc Khách Hàng</a>
+                  <a href="#" class="link link--hover-primary"
+                    >Hướng Dẫn Mua Hàng</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="#" class="link link--hover-primary">Chính Sách Bảo Hành</a>
+                  <a href="#" class="link link--hover-primary"
+                    >Hướng Dẫn Bán Hàng</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">Thanh Toán</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">Vận Chuyển</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary"
+                    >Trả Hàng & Hoàn Tiền</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary"
+                    >Chăm Sóc Khách Hàng</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary"
+                    >Chính Sách Bảo Hành</a
+                  >
                 </li>
               </ul>
             </div>
-            <div class="col col-2-4">
+            <div class="col col-lg-2-4 col-md-4 col-sm-6">
               <h3 class="footer__heading">Giới thiệu</h3>
               <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Giới Thiệu Về Shop</a></li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Tuyển Dụng</a></li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Điều Khoản</a></li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Chính Sách Bảo Mật</a></li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Chính Hãng</a></li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Kênh Người Bán</a></li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">Flash Sales</a></li>
                 <li class="footer__item">
-                  <a href="#" class="link link--hover-primary">Liên Hệ Với Truyền Thông</a>
+                  <a href="#" class="link link--hover-primary"
+                    >Giới Thiệu Về Shop</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">Tuyển Dụng</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">Điều Khoản</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary"
+                    >Chính Sách Bảo Mật</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">Chính Hãng</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary"
+                    >Kênh Người Bán</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">Flash Sales</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary"
+                    >Liên Hệ Với Truyền Thông</a
+                  >
                 </li>
               </ul>
             </div>
-            <div class="col col-2-4">
+            <div class="col col-lg-2-4 col-md-4 col-sm-6">
               <h3 class="footer__heading">Thanh toán</h3>
-              <img class="footer__payment-img" src="./assets/images/visa.png" alt="visa">
-              <img class="footer__payment-img" src="./assets/images/paypal.png" alt="paypal.png">
-              <img class="footer__payment-img" src="./assets/images/bitcoin.png" alt="bitcoin.png">
+              <img
+                class="footer__payment-img"
+                src="./assets/images/visa.png"
+                alt="visa"
+              />
+              <img
+                class="footer__payment-img"
+                src="./assets/images/paypal.png"
+                alt="paypal.png"
+              />
+              <img
+                class="footer__payment-img"
+                src="./assets/images/bitcoin.png"
+                alt="bitcoin.png"
+              />
             </div>
-            <div class="col col-2-4">
+            <div class="col col-lg-2-4 col-md-4 col-sm-6">
               <h3 class="footer__heading">Theo dõi</h3>
               <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="link link--hover-primary">
-                  <i class="fa-brands fa-facebook"></i>Facebook</a>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">
+                    <i class="fa-brands fa-facebook"></i>Facebook</a
+                  >
                 </li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">
-                  <i class="fa-brands fa-instagram-square"></i>Instagram</a>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">
+                    <i class="fa-brands fa-instagram-square"></i>Instagram</a
+                  >
                 </li>
-                <li class="footer__item"><a href="#" class="link link--hover-primary">
-                  <i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+                <li class="footer__item">
+                  <a href="#" class="link link--hover-primary">
+                    <i class="fa-brands fa-linkedin"></i>LinkedIn</a
+                  >
                 </li>
               </ul>
             </div>
-            <div class="col col-2-4">
+            <div class="col col-lg-2-4 col-md-8 col-sm-12">
               <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
               <div class="footer__apps-store">
                 <img
@@ -1976,12 +2078,12 @@
             </div>
           </div>
           <div class="row footer__copyright">
-            <h4>© Lấy template từ shopee & tiki</h4>
+            <h4>© UI template from shopee & tiki</h4>
           </div>
         </div>
       </footer>
     </div>
-    <div class="modal modal--login-form">
+    <div class="modal">
       <div class="modal__overlay"></div>
       <div class="modal__body">
         <!-- SIGN UP FORM -->
@@ -2028,7 +2130,7 @@
               <a class="link link--primary">Chính sách bảo mật</a>
             </div>
             <div class="auth-form__controls">
-              <button class="btn btn--standard">TRỞ LẠI</button>
+              <button class="form-exit btn btn--standard">TRỞ LẠI</button>
               <button class="btn btn--primary">ĐĂNG KÝ</button>
             </div>
           </div>
@@ -2071,7 +2173,7 @@
               <div class="link link--secondary">Cần trợ giúp?</div>
             </div>
             <div class="auth-form__controls">
-              <button class="btn btn--standard">TRỞ LẠI</button>
+              <button class="form-exit btn btn--standard">TRỞ LẠI</button>
               <button class="btn btn--primary">ĐĂNG NHẬP</button>
             </div>
           </div>
@@ -2088,5 +2190,6 @@
         </div>
       </div>
     </div>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
