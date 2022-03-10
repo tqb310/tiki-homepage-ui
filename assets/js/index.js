@@ -74,8 +74,9 @@ window.addEventListener('load', function(){
     function createSlider(){
         let index = 0;
         let slideContainer = $('.main__slide-banner-inner');
-        let slideContainerWidth = $('.main__slide-banner').clientWidth;
+        let slideContainerWidth = 0;
         return (i, pos) => {
+            slideContainerWidth = $('.main__slide-banner').clientWidth;
             if(pos !== undefined){
                 index = pos;
                 slideContainer.style.transform = `translateX(${index * -slideContainerWidth}px)`;
