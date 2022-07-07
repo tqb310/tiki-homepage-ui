@@ -1,48 +1,377 @@
 :root {
-    /* --white-color: #fff;
+  /* --white-color: #fff;
     --black-color: #000; */
-    --text-color: #333;
-    --primary-color: rgb(26, 148, 255);
-    --light-blue: #f2faff;
+  --primary-color: #65C18C;
+  --text-color: #333;
+  --background-color: #f5f5fa;
+  /* BLUE */
+  --light-blue: #f2faff;
+  --facebook-color: #3b5998;
+
+  /* YELLOW */
+  --dark-yellow: rgb(255, 216, 64);
+
+  /* RED */
+  --darker-red: #9e0000;
+  --dark-red: #ff4c57;
+  --medium-red: #ffaaaf;
+  --light-red: #fff1f2;
+  /* GREEN */
+  --dark-green: #3c915f;
 }
 
 * {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-    font-size: 62.5%;
-    line-height: 1.6rem;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: "Roboto", sans-serif; 
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .container-fluid {
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
+  width: 1240px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .container {
-    width: 100%;
+  width: 100%;
 }
 
-.dflex {
-    display: flex;
+/* .col:first-child {
+  padding-right: 5px !important;
+  padding-left: 0 !important
+}
+.col:last-child {
+  padding-left: 5px;
+  padding-right: 0 
+} */
+.col-1 {
+  width: 100%/12;
+}
+.col-2 {
+  width: 16.6665%;
+}
+.col-2-4 {
+  width: 20%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.3334%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-10 {
+  width: 83.3334%;
+}
+.col-12 {
+  width: 100%;
+}
+.link {
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s;
+  /* width: 100%; */
+  /* height: 100%; */
 }
 
-.dflex--wrap {
-    display: flex;
-    flex-wrap: wrap;
+.link--white {
+  color: white;
 }
 
+.link--primary {
+  color: var(--primary-color);
+}
+
+.link--secondary {
+  color: #777
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+.link--hover-primary:hover {
+  color: var(--primary-color);
+}
+/* DISCOUNT STYLE */
+.discount {
+  font-weight: 400;
+  font-size: 1.3rem;
+  padding: 0px 2px;
+  background-color: var(--light-red);
+  border: 1px solid var(--dark-red);
+  margin: 3px;
+}
+
+/* CURRENCY STYLE */
+.currency {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  vertical-align: super;  
+}
+
+/* QUANTITY STATUS */
+.quantity-status {
+  background-color: var(--medium-red);
+  border-radius: 9px;
+  color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2px 0;
+  position: relative;
+}
+
+.quantity-status > span {
+  position: relative;
+  z-index: 998;
+}
+
+.quantity-status::after {
+  content: "";
+  position: absolute;
+  background-color: var(--dark-red);
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 9px;
+}
+
+.quantity-status--sold-out::after {
+  width: 90%;
+}
+
+.quantity-status--sold-out::before {
+  content: "";
+  position: absolute;
+  background: url("../images/fire_icon.svg") no-repeat;
+  background-size: 24px;
+  background-position: 0 60%;
+  height: 200%;
+  width: 100%;
+  bottom: 0;
+  left: 5%;
+  z-index: 999;
+}
+
+.quantity-status--available::after {
+  width: 33%;
+}
+
+.quantity-status--just-open::after {
+  width: 12%;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 1003; 
+  align-items: center;
+  animation: fadeIn .2s linear;
+}
+
+/* OVERLAY */
+.modal__overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;  
+  
+}
+
+.modal.open {
+  display: flex;
+}
+
+/* OVERLAY WHEN FOCUSING ON SEARCHBAR */
+.modal.modal--searchbar {
+  z-index: 1000;  
+}
+
+/* OVERLAY WHEN ENTERING SIGN UP & LOGIN FORM */
+.modal.modal--login-form #login,
+.modal.modal--register-form #register {
+  display: block;
+}
+
+.modal__body {
+  --scale-from: .7;
+  --scale-to: 1;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #555;
+  margin: auto;  
+  max-width: 1000px;
+  overflow: hidden;
+  animation: scale linear .2s;
+}
+
+/* BUTTON */
+.btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 2px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1.4rem;
+  padding: .75rem 2rem;
+  transition: all .2s; 
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:active {
+  transform: scale(.95,.95);
+}
+
+.btn + .btn {
+  margin-left: 2rem
+}
+
+.btn:hover {
+  opacity: .8 ;
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+  color: #fff
+}
+.btn--standard {
+  background-color: #fff;
+  color: var(--text-color);
+}
+.btn--disabled {
+  background-color: #fff;
+  color: var(--text-color);
+  opacity: .5;
+  cursor: default;
+}
+.btn--disabled:hover {
+  opacity: .5;
+}
+.btn--disabled:active {
+  transform: none;
+}
+/* Icon button */
+.icon-btn {
+  display: flex;
+  align-items: center;  
+  text-align: center;
+}
+
+.icon-btn.facebook {
+  background-color: var(--facebook-color);
+  color: white
+}
+
+.icon-btn.google {
+  background-color: #fcfcfc;
+}
+
+.icon-btn > img {
+  width: 16px;
+  background-color: white;
+  border-radius: 2px;
+  /* margin-right: 1.5rem; */
+}
+
+.icon-btn > span {
+  flex: 1
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #777
+}
+.pagination-item {
+  min-width: 60px;
+  height: 50px;
+  padding: 1rem 1rem;
+  /* box-sizing: border-box; */
+}
+.pagination-item__link {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  color: inherit;  
+  display: inline-block;
+  text-align: center;
+  border-radius: 3px;
+  line-height: 30px;
+}
+.pagination-item.active .pagination-item__link{
+  background-color: var(--primary-color);
+  color: #fff
+}
 /* ------------------ ANIMATION ---------------- */
 
+@keyframes fadeInParams {
+  0% {
+    opacity: var(--opacity-from);    
+  }
+  50% {
+    opacity: var(--opacity-to);
+  }
+  100% {
+    opacity: var(--opacity-from);
+  }
+}
+
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(var(--scale-from));
+  }
+  to {
+    transform: scale(var(--scale-to));
+  } 
+}
+
+@keyframes scale2 {
+  0% {
+    transform: scale(var(--scale-from));
+  }
+  50% {
+    transform: scale(var(--scale-to));
+  }
+  100% {
+    transform: scale(var(--scale-from));
+  }
 }

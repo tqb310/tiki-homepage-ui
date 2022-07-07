@@ -1,0 +1,111 @@
+/* 1239px or lower */
+@media (max-width: 1239px){
+    .hide-on-low-pc {
+        display: none;
+    }
+    .main {
+        padding: 0.05px
+    }
+}
+/* Tablet & mobile */
+@media (max-width: 1023px) {
+    .hide-on-tablet-mobile {
+        display: none;
+    }
+    .header {
+        height: auto
+    }
+    .header__tools {
+        padding: 1.2rem 0
+    }
+    .header__cart-container > div{
+        height: auto
+    }
+    .main__sort-bar {
+        display: flex;
+    }
+    .footer {
+        padding: 1rem 2rem
+    }
+}
+/* Only tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .main__hot-sale-item {  
+        width: calc(100%/4);
+    }    
+}
+/* Only mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .header__tools {
+        padding: 1.2rem 2rem;
+    }
+    .header__cart-list {
+        width: 90vw;
+    }
+    .header__cart-container {
+        flex-basis: auto;
+    }
+    .header__tools {
+        justify-content: space-between;
+        align-items: center;        
+    }
+    .header__logo-link {
+        flex-basis: auto;
+    }
+    .header__search-icon-mobile {
+        display: block;
+    }
+    .header__search-icon-mobile .fa-xmark {
+        display: none;
+    }
+    .header__search-wrapper {
+          position: absolute;
+          top: 61px;
+          left: 0;
+          right: 0;          
+          box-shadow: 0 1px 10px rgba(0,0,0,0.2);
+          display: none;
+          animation: slideDownSearchMobile ease .3s, fadeIn ease .8s;
+          padding: .5rem 0;
+    }
+    #mobile-search:checked ~ .header__search-wrapper{
+        display: block;
+    }
+    #mobile-search:checked ~ .header__search-icon-mobile .fa-magnifying-glass{
+        display: none;
+    }
+    #mobile-search:checked ~ .header__search-icon-mobile .fa-xmark {
+        display: inline;
+    }
+    .main__hot-sale-item {  
+        width: calc(100%/3);
+    }
+    .main__home-products .row {
+        margin: 0
+    }
+    .pagination {
+        font-size: 1.4rem;        
+    }
+    .pagination-item {
+        min-width: 45px;
+        height: 35px;
+        padding: .6rem .6rem;
+    }
+    .pagination-item__link {
+        line-height: 23px;
+    }
+    @keyframes slideDownSearchMobile {
+        from {
+            top: 20px
+        }
+        to {
+            top: 60px
+        }
+    }
+}
